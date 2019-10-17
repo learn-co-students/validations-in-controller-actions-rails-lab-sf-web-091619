@@ -1,3 +1,13 @@
+<% if flash[:errors]%>
+  <h3>Error updating Post</h3>
+  <ul>
+  <% flash[:errors].each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
 <h2>Editing "<%= @post.title %>"</h2>
 <%= form_tag post_path(@post), method: "patch" do %>
   <div class="field">
