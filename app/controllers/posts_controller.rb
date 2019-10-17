@@ -14,6 +14,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       flash[:errors] = @post.errors.full_messages
+      @post = Post.find(params[:id])
       render 'edit'
     end
   end
